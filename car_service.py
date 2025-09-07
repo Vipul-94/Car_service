@@ -1,11 +1,10 @@
 import streamlit as st
 import pandas as pd
 import os
-
 # --- File paths ---
-USERS_FILE = r"C:\Users\guptavip\Downloads\login_file.xlsx"
-SERVICES_FILE = r"C:\Users\guptavip\Downloads\model_price.xlsx"
-USER_SERVICES_FILE = r"C:\Users\guptavip\Downloads\user_services.xlsx"
+USERS_FILE = "login_file.xlsx"
+SERVICES_FILE = "model_price.xlsx"
+USER_SERVICES_FILE = "user_services.xlsx"
 
 
 # --- Load users ---
@@ -110,3 +109,4 @@ if st.session_state.get("current_user"):
     if st.button("Confirm & Save Service", key="save_service_btn"):
         save_user_service(st.session_state["current_user"], selected_model, selected_vas, price)
         st.success("✅ Service saved successfully!")
+
